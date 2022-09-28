@@ -1,3 +1,27 @@
-h1 {
-	color: red;
+#container {
+	background: lightblue;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#calcShell {
+	background: lightpink;
+	width: 500px;
+	height: 500px;
+}
+
+#calcShell {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas:
+		none
+		'display display display display'
+		'button7 button8 button9 button/'
+		'button4 button5 button6 button*'
+		'button1 button2 button3 button-'
+		'button0 button0 button+ button+';
 }
