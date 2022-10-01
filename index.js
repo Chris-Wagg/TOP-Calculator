@@ -30,9 +30,16 @@ function operate(numOne, operator, numTwo) {
 	}
 }
 
-add(1, 2)
-subtract(3, 2)
-multiply(2, 2)
-divide(4, 2)
+// function clearDisplay() {
+// 	let display = document.getElementById('display')
+// 	let clearDisplay = (display.innerHTML = [])
+// 	display = clearDisplay
+// }
 
-operate(1, '+', 2)
+// function equalButton() {}
+
+// function inputToDisplay() {
+// 	let displayInput = []
+// 	let input = document.getElementsByClassName('button').value
+// 	displayInput.unshift(input)
+// }
