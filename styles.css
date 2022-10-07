@@ -1,118 +1,57 @@
-#container {
-	background: #e8ecf2;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-#calcShell {
+body {
+	padding: 0;
+	margin: 0;
 	background: #e8ecf2;
-	width: auto;
-	height: 500px;
 }
 
-#calcShell {
+.calc-grid {
 	display: grid;
-	grid-template-columns: 100px 100px 100px 100px;
-	grid-template-rows: auto;
-	grid-template-areas:
-		'display display display buttonClear'
-		'button7 button8 button9 buttonDivide'
-		'button4 button5 button6 buttonTimes'
-		'button1 button2 button3 buttonMinus'
-		'buttonDecimal button0 buttonEquals buttonPlus';
-	gap: 10px 10px;
+	justify-content: center;
+	align-content: center;
+	min-height: 100vh;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-.display {
-	border: 2px solid black;
-	font-size: 36px;
-	font-weight: 400;
-	display: flex;
-	justify-content: end;
-	align-items: center;
-	padding-right: 40px;
-}
-
-.button {
+.calc-grid > button {
+	cursor: pointer;
 	background-color: #e8ecf2;
 	color: #73787d;
-	border-radius: 45px;
+	border-radius: 25px;
 	border: none;
-
+	margin: 6px;
 	box-shadow: 5px 5px 10px #5d5e61, -5px -5px 10px #ffffff;
-	font-size: 48px;
+	font-size: 36px;
 	font-weight: 400;
+}
 
+.span-two {
+	grid-column: span 2;
+}
+
+.output {
+	grid-column: 1/ -1;
+	background-color: rgba(0, 0, 0, 0.75);
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
+	justify-content: space-around;
+	flex-direction: column;
+	padding: 10px;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
-.button:hover {
-	box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
-		-2px -2px 4px rgba(255, 255, 255, 0.4),
-		2px 2px 2px rgba(255, 255, 255, 0.05), 2px 2px 4px rgba(0, 0, 0, 0.1);
-	/* transition: 0.3s ease-in-out; */
+.output .previous-op {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 1.5rem;
 }
-.button:active {
-	box-shadow: inset 5px 5px 10px #5d5e61, inset -5px -5px 10px #ffffff;
-}
-
-.buttonClear {
-	grid-area: buttonClear;
-}
-.display {
-	grid-area: display;
-}
-
-.button1 {
-	grid-area: button1;
-}
-.button2 {
-	grid-area: button2;
-}
-.button3 {
-	grid-area: button3;
-}
-.button4 {
-	grid-area: button4;
-}
-.button5 {
-	grid-area: button5;
-}
-.button6 {
-	grid-area: button6;
-}
-.button7 {
-	grid-area: button7;
-}
-.button8 {
-	grid-area: button8;
-}
-.button9 {
-	grid-area: button9;
-}
-.button0 {
-	grid-area: button0;
-}
-.buttonMinus {
-	grid-area: buttonMinus;
-}
-.buttonPlus {
-	grid-area: buttonPlus;
-}
-.buttonTimes {
-	grid-area: buttonTimes;
-}
-.buttonDivide {
-	grid-area: buttonDivide;
-}
-.buttonDecimal {
-	grid-area: buttonDecimal;
-}
-.buttonEquals {
-	grid-area: buttonEquals;
+.output .current-op {
+	color: white;
+	font-size: 2.5rem;
 }
